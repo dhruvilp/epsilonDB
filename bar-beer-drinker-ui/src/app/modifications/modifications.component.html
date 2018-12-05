@@ -1,0 +1,85 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Modifications</h1>
+    <p class="lead">Select tables to modify data.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <h2 class="text-center font-weight-light">Tables Info (Relational Schema)</h2>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Table Name</th>
+        <th scope="col">Schema</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><a routerLink="/modifications/bars">Bar</a></td>
+        <td>[ BarID, BarName, Address, City, State, Zipcode, MonHours, TueHours, WedHours, ThurHours, FriHours, SatHours, SunHours]</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td><a routerLink="/modifications/bartenders">Bartenders</a></td>
+        <td>[ SSN, Name, Address, City, State, Zipcode, Gender, Phone, Age, Email ]</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td><a routerLink="/modifications/drinkers">Drinkers</a></td>
+        <td>[ Driverlicense, Name, Address, City, State, Zipcode, Phone, Gender, Age ]</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td><a routerLink="/modifications/frequents">Frequents</a></td>
+        <td>[ BarID, Driverlicense, Distance ]</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td><a routerLink="/modifications/handles">Handles</a></td>
+        <td>[ TransID, SSN ]</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td><a routerLink="/modifications/likes">Likes</a></td>
+        <td>[ Driverlicense, ItemName]</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td><a routerLink="/modifications/makes">Makes</a></td>
+        <td>[ TransID, BarID, Driverlicense ]</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td><a routerLink="/modifications/menu">Menu</a></td>
+        <td>[ ItemName, Type, Maker]</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td><a routerLink="/modifications/sells">Sells</a></td>
+        <td>[ BarID, ItemName, Weekdayprice, Weekendprice, Inventory]</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td><a routerLink="/modifications/trans">Trans</a></td>
+        <td>[ TransID, TransDate, TransDay, TransTime, SubTotal, Tax, Tip, Total ]</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td><a routerLink="/modifications/transdetails">TransDetails</a></td>
+        <td>[ TransID, Itemname, Qty ]</td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td><a routerLink="/modifications/work">Work</a></td>
+        <td>[ BarID, SSN, City, State, Zipcode, EmployeeID, Mon, Tue, Wed, Thur, Fri, Sat, Sun ]</td>
+      </tr>
+    
+  </tbody>
+</table>
+</div>
+
+

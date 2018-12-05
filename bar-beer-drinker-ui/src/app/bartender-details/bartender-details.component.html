@@ -1,0 +1,62 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{bartenderName}}</h1>
+    <p class="bartender-details">
+      Works at <i>" {{  barname  }} "</i>
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Weekly Shifts</h2>
+  <p-table [value]="bartendershift">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+        <th>SUN</th>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-bartender>
+      <tr>
+        <td>{{ bartender.mon}}</td>
+        <td>{{ bartender.tue}}</td>
+        <td>{{ bartender.wed}}</td>
+        <td>{{ bartender.thur}}</td>
+        <td>{{ bartender.fri}}</td>
+        <td>{{ bartender.sat}}</td>
+        <td>{{ bartender.sun}}</td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Number of beers sold</h2>
+  <p-table [value]="bartenderbeer">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Beer Name</th>
+        <th>No. of Beers sold</th>
+        
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-bartender>
+      <tr>
+        <td>{{ bartender.itemname}}</td>
+        <td>{{ bartender.total_sold }}</td>
+        
+
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>

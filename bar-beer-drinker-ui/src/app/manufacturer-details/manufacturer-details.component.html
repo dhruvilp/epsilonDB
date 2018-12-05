@@ -1,0 +1,46 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{ manfName }}</h1>
+    <p class="lead">Explore Manufacturers</p>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Regions where their sales are high</h2>
+  <p-table [value]="topregiondrinker">
+    <ng-template pTemplate="header">
+      <tr> 
+        <th class="text-center">City</th>
+        <th class="text-center">State</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-manf>
+      <tr>
+        <td class="text-center">{{ topregion.city }}</td>
+        <td class="text-center">{{ topregion.state }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Regions where their beers are liked the most</h2>
+  <p-table [value]="topregion">
+    <ng-template pTemplate="header">
+      <tr> 
+        <th class="text-center">City</th>
+        <th class="text-center">State</th>
+        <th class="text-center">beerssold</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-manf>
+      <tr>
+        <td class="text-center">{{ manf.City }}</td>
+        <td class="text-center">{{ manf.State }}</td>
+        <td class="text-center">{{ manf.sales }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>

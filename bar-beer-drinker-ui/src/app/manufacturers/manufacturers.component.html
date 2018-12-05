@@ -1,0 +1,23 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Manufacturers Page</h1>
+    <p class="lead">Explore Beer Manufacturers</p>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">GET DETAILS OF MANUFACTURERS HERE</h2>
+  <p-table [value]="manf">
+    <ng-template pTemplate="header">
+      <tr> 
+        <th class="text-center">Manufacturer</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-manufacturer>
+      <tr>
+        <td class="text-center"><a routerLink="/manufacturers/{{ manufacturer.maker }}">{{ manufacturer.maker }}</a></td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>

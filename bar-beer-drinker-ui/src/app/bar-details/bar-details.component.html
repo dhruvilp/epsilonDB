@@ -1,0 +1,90 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{barName}}</h1>
+    <p class="bar-details" *ngIf="barDetails">
+      {{barDetails?.address}}<span *ngIf="barDetails.address&&barDetails.city">,</span>
+      {{barDetails?.city}}, {{barDetails?.state}}, {{barDetails?.zipcode}}
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Menu</h2>
+  <br>
+  <p-table [value]="menu">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Item Name</th>
+        <th>Type (Beer/Food)</th>
+        <th>Manufacturer</th>
+        <th>Price</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td><a routerLink="/beers/{{ item.itemname }}">{{ item.itemname }}</a></td>
+          <td>{{ item.type}}</td>
+          <td>{{ item.maker}}</td>
+          <td>{{ item.weekendprice | currency }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<br><br>
+
+<div class="container">
+  <br>
+  <div id="bargraph"></div>
+</div>
+
+<div class="container">
+  <br>
+  <div id="bargraph2"></div>
+</div>
+
+<div class="container">
+  <br>
+  <div id="bargraph3"></div>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Top 10 Drinkers</h2>
+  <p class="text-center">Who spends the most</p>
+  <p-table [value]="drinkers">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Drinker</th>
+        <th>Amount Spend ($)</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-bar>
+      <tr>
+        <td>{{ bar.name }}</td>
+        <td>{{ bar.total10Drinkers | currency }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Top 10 Beers</h2>
+  <p class="text-center">Which are most popular</p>
+  <p-table [value]="beers">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Beer</th>
+        <th>Number of beers sold</th>
+        <th>Day</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-bar>
+      <tr>
+        <td>{{ bar.beers.monday.iname }}</td>
+        <td>{{ bar.beers.iqty }}</td>
+        <td>{{ bar.day }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>

@@ -1,0 +1,101 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{beerName}}</h1>
+    <p class="beer-details" *ngIf="manufacturer">
+      Made by <i>{{manufacturer}}</i>
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <div>
+      <h2 class="text-center font-weight-light">Basic Info</h2>
+      <p class="text-center">About Beer.</p>
+    <span class="font-weight-light result-count"> Sold at {{beerLocations?.length}}</span>
+    <p-dropdown class="float-right text-left" *ngIf="filterOptions" [options]="filterOptions" (onChange)="
+    sortBy($event.value)" ></p-dropdown>
+    <br>
+    <br>
+    <p-table [value]="beerLocations" sortMode="multiple" sortField="price">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Bar</th>
+          <th>Price</th>
+          <th>Number Of Customers</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-bar>
+        <tr>
+          <td><a routerLink="/bars/{{ bar.Bar }}">{{ bar.Bar }}</a></td>
+          <td>{{ bar.Price | currency }}</td>
+          <td>{{ bar.customers }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br> <br>
+
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Top 10 Bars</h2>
+  <p class="text-center">Where this beer Sells the Most.</p>
+  <p-table [value]="bars">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Bar</th>
+        <th>Number of Beers Sold</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-beer>
+      <tr>
+        <td>{{ beer.barname }}</td>
+        <td>{{ beer.numBeersSold }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>
+
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Top 10 Consumers</h2>
+  <p class="text-center">Who are biggest buyers of this Beer.</p>
+  <p-table [value]="consumers">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Number of Beers Bought</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-beer>
+      <tr>
+        <td>{{ beer.transID }}</td>
+        <td>{{ beer.biggestConsumers }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Top 10 Dates</h2>
+  <p class="text-center">When Beer Solds the Most.</p>
+  <p-table [value]="dates">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Dates [yyyy-mm-dd]</th>
+        <th>Number of Beers Bought</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-beer>
+      <tr>
+        <td>{{ beer.transdate }}</td>
+        <td>{{ beer.mostselling }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>
