@@ -69,20 +69,20 @@
 
 <div class="container">
   <h2 class="text-center font-weight-light">Top 10 Beers</h2>
-  <p class="text-center">Which are most popular</p>
+  <p class="text-center">Which are most popular on Tuesday</p>
   <p-table [value]="beers">
     <ng-template pTemplate="header">
       <tr>
         <th>Beer</th>
         <th>Number of beers sold</th>
-        <th>Day</th>
+        <!--<th>Day</th>-->
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-bar>
       <tr>
-        <td>{{ bar.beers.monday.iname }}</td>
-        <td>{{ bar.beers.iqty }}</td>
-        <td>{{ bar.day }}</td>
+        <td>{{ bar[0] }}</td>
+        <td>{{ bar[1] }}</td>
+        <!--<td>{{ bar.day }}</td>-->
       </tr>
     </ng-template>
   </p-table>

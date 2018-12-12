@@ -365,36 +365,25 @@ def get_top_drinkers(barname):
 def get_top_beers(barname):
     with engine.connect() as con:
 
-        result = []
+        # result = []
         for i in range(7):
             query = sql.text(
-                "Select deets2.iname, deets2.iqty from "
-                "(Select deets.transID as tID, deets.itemname as iname, deets.qty as iqty from "
-                "(Select transID, itemname, sum(qty) as qty from transdetails where transID in "
-                "(Select transID from makes where barID in "
-                "(Select barID from bar where barname = :barname) ) "
-                "group by itemname ) deets Where deets.itemname in "
-                "(Select itemname from menu where type = 'B') ) deets2 "
-                "where deets2.tID in (Select transID from trans where transday = 'Wednesday') "
-                "order by deets2.iqty DESC limit 10;"
+                'Select deets2.iname, deets2.iqty from '
+                '(Select deets.transID as tID, deets.itemname as iname, deets.qty as iqty from '
+                '(Select transID, itemname, sum(qty) as qty from transdetails where transID in '
+                '(Select transID from makes where barID in '
+                '(Select barID from bar where barname = :barname) ) '
+                'group by itemname ) deets Where deets.itemname in '
+                '(Select itemname from menu where type = "B") ) deets2 '
+                'where deets2.tID in (Select transID from trans where transday = "Tuesday") '
+                'order by deets2.iqty DESC limit 10;'
             )
-            rs = con.execute(query, barname=barname, day=day_dict[i])
-            beer_qty = rs.fetchall()
-            print("bq, ", beer_qty[0][0])
-            if result is None:
-                pass
-            else:
-                for row in len(beer_qty):
-                    dict = {
-                        "day": day_dict[i],
-                        "beer": beer_qty[row][0],
-                        "qty": beer_qty[row][1]
-                    }
-                    print("dict ", dict)
-                    result.append(dict)
-                    print(result[i])
-        return result
+            rs = con.execute(query, barname=barname)
 
+            result = list(rs.fetchall())
+            if result is None:
+                return None
+            return [list(i) for i in result]
 
 def get_busy_bardays(bar_name):
     with engine.connect() as con:

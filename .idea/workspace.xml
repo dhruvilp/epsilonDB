@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/BarBeerDrinker/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="323" column="41" selection-start-line="323" selection-start-column="12" selection-end-line="323" selection-end-column="41" />
+            <state relative-caret-position="165">
+              <caret line="287" lean-forward="true" selection-start-line="287" selection-end-line="287" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/BarBeerDrinker/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="178" column="15" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="15" />
+            <state relative-caret-position="146">
+              <caret line="373" column="51" selection-start-line="373" selection-start-column="51" selection-end-line="373" selection-end-column="51" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -45,27 +45,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturer-details/manufacturer-details.component.ts">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bar-details/bar-details.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="174">
+              <caret line="77" column="27" lean-forward="true" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturer-details/manufacturer-details.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="404" column="39" lean-forward="true" selection-start-line="404" selection-start-column="39" selection-end-line="404" selection-end-column="39" />
+            <state relative-caret-position="90">
+              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturer-details/manufacturer-details.component.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-121">
+              <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -86,13 +90,13 @@
       <find>sells</find>
       <find>bars-selling</find>
       <find>transac</find>
-      <find>get_top_beers</find>
       <find>get_drinker</find>
       <find>get_top10_transacti</find>
       <find>get_top10_transa</find>
-      <find>sold</find>
       <find>get_manufac</find>
       <find>minima</find>
+      <find>sold</find>
+      <find>get_top_beers</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,7 +115,6 @@
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bartenders/bartenders.component.ts" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bartender-details/bartender-details.component.html" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/beers/beers.component.html" />
-        <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bar-details/bar-details.component.html" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/beer-details/beer-details.component.html" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/beer-details/beer-details.component.ts" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/drinker-details/drinker-details.component.ts" />
@@ -120,11 +123,12 @@
         <option value="$PROJECT_DIR$/server/BarBeerDrinker/__init__.py" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bartenders.service.ts" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bartender-details/bartender-details.component.ts" />
-        <option value="$PROJECT_DIR$/server/BarBeerDrinker/database.py" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bartenders/bartenders.component.html" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bars/bars.component.html" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturers/manufacturers.component.html" />
         <option value="$PROJECT_DIR$/package-lock.json" />
+        <option value="$PROJECT_DIR$/server/BarBeerDrinker/database.py" />
+        <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bar-details/bar-details.component.html" />
       </list>
     </option>
   </component>
@@ -151,6 +155,27 @@
               <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
               <item name="bar-beer-drinker-ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
+              <item name="bar-beer-drinker-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
+              <item name="bar-beer-drinker-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
+              <item name="bar-beer-drinker-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="bar-details" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
@@ -330,13 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bar-details/bar-details.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/beer-details/beer-details.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -369,16 +387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/BarBeerDrinker/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="323" column="41" selection-start-line="323" selection-start-column="12" selection-end-line="323" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -434,10 +442,34 @@
     <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturers/manufacturers.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/BarBeerDrinker/database.py">
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="178" column="15" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="15" />
+          <caret line="404" column="39" lean-forward="true" selection-start-line="404" selection-start-column="39" selection-end-line="404" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturer-details/manufacturer-details.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/BarBeerDrinker/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="287" lean-forward="true" selection-start-line="287" selection-end-line="287" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/BarBeerDrinker/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="373" column="51" selection-start-line="373" selection-start-column="51" selection-end-line="373" selection-end-column="51" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -445,19 +477,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturer-details/manufacturer-details.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturer-details/manufacturer-details.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="-121">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
+    <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bar-details/bar-details.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="404" column="39" lean-forward="true" selection-start-line="404" selection-start-column="39" selection-end-line="404" selection-end-column="39" />
+        <state relative-caret-position="174">
+          <caret line="77" column="27" lean-forward="true" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
         </state>
       </provider>
     </entry>
