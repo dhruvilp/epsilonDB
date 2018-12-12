@@ -39,7 +39,7 @@ const routes: Routes = [
     component: BarsComponent
   },
   {
-    path: 'bars/:bar',
+    path: 'bars/:bars',
     pathMatch: 'full',
     component: BarDetailsComponent
 
