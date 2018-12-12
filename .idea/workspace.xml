@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76e7313b-a1aa-4c11-aff1-91cd885bee6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/hue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/line.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-300.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-300.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-300.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-300.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-300.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-700.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-700.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-700.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-700.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-700.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/open-sans-v15-latin-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/password-meter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/polyfills.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/primeicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/primeicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/primeicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/primeicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/runtime.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/scripts.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/styles.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/vendor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/BarBeerDrinker/static/vendor.js.map" beforeDir="false" />
-    </list>
+    <list default="true" id="76e7313b-a1aa-4c11-aff1-91cd885bee6d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +63,24 @@
             <path>
               <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
+              <item name="bar-beer-drinker-ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
+              <item name="bar-beer-drinker-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
+              <item name="bar-beer-drinker-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -178,6 +156,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
         </state>
       </provider>
     </entry>
