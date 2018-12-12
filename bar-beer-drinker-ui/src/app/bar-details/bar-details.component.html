@@ -59,8 +59,8 @@
     </ng-template>
     <ng-template pTemplate="body" let-bar>
       <tr>
-        <td>{{ bar.name }}</td>
-        <td>{{ bar.total10Drinkers | currency }}</td>
+        <td>{{ bar[0] }}</td>
+        <td>{{ bar[1] | currency}}</td>
       </tr>
     </ng-template>
   </p-table>

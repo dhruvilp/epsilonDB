@@ -18,10 +18,6 @@ export class BeerDetailsComponent implements OnInit {
   beerLocations: BeerLocation[];
   manufacturer: string;
 
-  filterOptions: SelectItem[];
-  sortField: string;
-  sortOrder: number;
-
   constructor(
     private beerService: BeersService,
     private route: ActivatedRoute
@@ -66,50 +62,10 @@ export class BeerDetailsComponent implements OnInit {
         }
       );
 
-      this.filterOptions = [
-        {
-          'label': 'Low Price first',
-          'value': 'low price'
-        },
-        {
-          'label': 'High price first',
-          'value': 'high price'
-        },
-        {
-          'label': 'Most frequented first',
-          'value': 'most frequented first'
-        },
-        {
-          'label': 'Least frequented first',
-          'value': 'least frequented first'
-        }
-      ];
-
-
     });
   }
 
   ngOnInit() {
-  }
-
-  sortBy(selectedOption: string) {
-    if (selectedOption === 'low price') {
-      this.beerLocations.sort((a, b) => {
-        return a.Price - b.Price;
-      });
-    } else if (selectedOption === 'high price') {
-      this.beerLocations.sort((a, b) => {
-        return b.Price - a.Price;
-      });
-    } else if (selectedOption === 'least frequented first') {
-      this.beerLocations.sort((a, b) => {
-        return a.customers - b.customers;
-      });
-    } else if (selectedOption === 'most frequented first') {
-      this.beerLocations.sort((a, b) => {
-        return b.customers - a.customers;
-      });
-    }
   }
 
 }

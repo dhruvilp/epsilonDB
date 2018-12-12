@@ -1,8 +1,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Find your favorite beers!</h1>
-    <p class="lead">This page can be used to see all the beers in our system or just the ones by your preferred
-      manufacturer.</p>
+    <h1 class="display-4">USA's most popular BEERS can be found here!</h1>
+    <p class="lead">List of Beers with Manufacturers</p>
 
     <p-dropdown *ngIf="manufacturerOptions" [ngClass]="{ 'no-option-selected': selectedManufacturer === undefined || selectedManufacturer === null }"
       placeholder="Filter by manufacturer" [options]="manufacturerOptions" [(ngModel)]="selectedManufacturer" showClear="true"

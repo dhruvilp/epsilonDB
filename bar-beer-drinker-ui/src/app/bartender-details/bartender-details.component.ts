@@ -13,7 +13,7 @@ export class BartenderDetailsComponent implements OnInit {
   bartenderName: string;
   bartendershift: any[];
   bartenderbeer: any[];
-  bar: string;
+  barname: string;
 
 
 
@@ -27,7 +27,7 @@ export class BartenderDetailsComponent implements OnInit {
       this.bartenderService.get_bartender_shift(this.bartenderName).subscribe(
         data => {
           this.bartendershift = data;
-          this.bar = this.bartendershift[1].barname;
+          this.barname = this.bartendershift[0].barname;
 
         }
       );

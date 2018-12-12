@@ -141,21 +141,13 @@ def get_bar_menu(bar_name):
 
 def get_bars_selling(beer):
     with engine.connect() as con:
-        query = sql.text('SELECT b.barname, s.weekendprice, b.customers FROM sells s, makes m, bar b \
-                JOIN (SELECT barID, count(*) AS customers FROM frequents GROUP BY driverlicense) as b \
-                ON s.barID = b.barID \
-                WHERE s.itemname = :beer \
-                ORDER BY s.weekendprice; \
-            ')
-        'Select b.barname, count(m.transID) from makes m, bar b where m.transID in ' \
-        '(Select transID from transdetails where itemname = :beer) ' \
-        'AND m.barID = b.barID group by m.barID ' \
-        'ORDER BY count(m.transID) Desc limit 10;'
+        query = sql.text('SELECT b.barname, s.weekendprice FROM bar b, sells s '
+                         'WHERE s.barID = b.barID AND s.itemname= :beer ORDER BY s.weekendprice DESC;')
 
         rs = con.execute(query, beer=beer)
         results = [dict(row) for row in rs]
         for i, _ in enumerate(results):
-            results[i]['price'] = float(results[i]['price'])
+            results[i]['weekendprice'] = float(results[i]['weekendprice'])
         return results
 
 
@@ -300,68 +292,12 @@ def get_top10_dates(beer):
 
 def get_top10_transactions(drinker_name):
     with engine.connect() as con:
-        query = sql.text('select h.Name, h.Bar, h.Item, h.price,h.Quantity, h.Amount,t.Date,t.Time,t.ID,t.Tip,t.Total\
-                from Transactions t, HasOrdered h\
-                where h.Name=:drinker_name and h.ID=t.ID\
-                order by t.Date desc;\
-                ')
-
-        rs = con.execute(query, drinker_name=drinker_name)
-
-        if rs is None:
-            return None
-        return [dict(row) for row in rs]
-
-
-def get_top10_beersordered(drinker_name):
-    with engine.connect() as con:
-        query = sql.text('select t1.Item, cast(sum(t1.Quantity) as unsigned) as mostbeer \
-                from \
-                (select h.Name, h.Bar, h.Item, h.Quantity, h.ID \
-                from HasOrdered h,Beers b \
-                where h.Name=:drinker_name  and b.Name=h.Item \
-                order by ID asc)t1 \
-                group by t1.Item \
-                order by mostbeer desc; \
-                ')
-
-        rs = con.execute(query, drinker_name=drinker_name)
-
-        if rs is None:
-            return None
-        return [dict(row) for row in rs]
-
-
-def get_top10_barsspending(drinker_name):
-    with engine.connect() as con:
-        query = sql.text('select t1.Bar,cast(sum(t1.Total) as unsigned) as spending \
-                from \
-                (select distinct h.Name, h.Bar,t.ID,t.Total \
-                from Transactions t, HasOrdered h \
-                where h.Name=:drinker_name and h.ID=t.ID \
-                order by t.ID desc)t1 \
-                group by t1.Bar \
-                order by spending desc; \
-                ')
-
-        rs = con.execute(query, drinker_name=drinker_name)
-
-        if rs is None:
-            return None
-        return [dict(row) for row in rs]
-
-
-def get_top_daysspending(drinker_name):
-    with engine.connect() as con:
-        query = sql.text('select t1.Day,cast(sum(t1.Total) as unsigned) as spending \
-                from \
-                (select distinct h.Name, t.ID,t.Total,t.Day \
-                from Transactions t, HasOrdered h \
-                where h.Name=:drinker_name and h.ID=t.ID \
-                order by t.ID desc)t1 \
-                group by t1.Day \
-                order by spending desc; \
-                ')
+        query = sql.text(
+            'select t.transID, b.barname, t.transdate, t.transday, t.transtime, t.total from trans t, bar b, '
+            '(select m.transID ,m.barID from makes m where m.driverlicense = '
+            '(select d.driverlicense from drinkers d where d.name= :drinker_name)) T '
+            'where t.transID=T.transID AND b.barID = T.barID ORDER BY t.total DESC LIMIT 10'
+        )
 
         rs = con.execute(query, drinker_name=drinker_name)
 
@@ -435,10 +371,12 @@ def get_top_beers(barname):
                 "Select deets2.iname, deets2.iqty from "
                 "(Select deets.transID as tID, deets.itemname as iname, deets.qty as iqty from "
                 "(Select transID, itemname, sum(qty) as qty from transdetails where transID in "
-                "(Select transID from makes where barID in (Select barID from bar where barname = :barname))	"
-                "group by itemname) deets Where deets.itemname in "
-                "(Select itemname from menu where type = \"B\")) deets2 where deets2.tID in "
-                "(Select transID from trans where transday = :day) order by deets2.iqty DESC limit 10;"
+                "(Select transID from makes where barID in "
+                "(Select barID from bar where barname = :barname) ) "
+                "group by itemname ) deets Where deets.itemname in "
+                "(Select itemname from menu where type = 'B') ) deets2 "
+                "where deets2.tID in (Select transID from trans where transday = 'Wednesday') "
+                "order by deets2.iqty DESC limit 10;"
             )
             rs = con.execute(query, barname=barname, day=day_dict[i])
             beer_qty = rs.fetchall()
@@ -475,8 +413,8 @@ def get_busy_bardays(bar_name):
 def get_bartender_shifts(bartender_name):
     with engine.connect() as con:
         query = sql.text(
-            'select  w.mon, w.tue,w.wed, w.thur,w.fri,w.sat,w.sun from work w where w.ssn = '
-            '(select bt.ssn from bartenders bt where bt.name= :bartender_name)'
+            'select  w.mon, w.tue,w.wed, w.thur,w.fri,w.sat,w.sun, b.barname from work w, bar b where w.ssn = '
+            '(select bt.ssn from bartenders bt where bt.name= :bartender_name) and b.barID=w.barID'
         )
 
         rs = con.execute(query, bartender_name=bartender_name)
@@ -492,8 +430,8 @@ def get_bartender_beerssold(bartender_name):
             'select T.itemname , T.total_sold from menu m, '
             '(select td.itemname, sum(qty) as total_sold from transdetails td where td.transID in '
             '(select  h.transID from handles h where h.ssn = '
-            '(select bt.ssn from bartenders bt where bt.name="Wendy Heard")) '
-            'group by td.itemname order by sum(qty) desc)T where T.itemname=m.itemname and m.type="B"'
+            '(select bt.ssn from bartenders bt where bt.name= :bartender_name)) '
+            'group by td.itemname order by sum(qty) desc)T where m.type="B" and T.itemname=m.itemname'
         )
 
         rs = con.execute(query, bartender_name=bartender_name)
