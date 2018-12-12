@@ -45,11 +45,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturer-details/manufacturer-details.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="404" column="39" lean-forward="true" selection-start-line="404" selection-start-column="39" selection-end-line="404" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -83,6 +92,7 @@
       <find>get_top10_transa</find>
       <find>sold</find>
       <find>get_manufac</find>
+      <find>minima</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,6 +124,7 @@
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bartenders/bartenders.component.html" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/bars/bars.component.html" />
         <option value="$PROJECT_DIR$/bar-beer-drinker-ui/src/app/manufacturers/manufacturers.component.html" />
+        <option value="$PROJECT_DIR$/package-lock.json" />
       </list>
     </option>
   </component>
@@ -145,12 +156,6 @@
               <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="epsilonDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="epsilonDB" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="BarBeerDrinker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,6 +199,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="284" y="23" width="1156" height="824" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1585903" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -445,6 +451,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="404" column="39" lean-forward="true" selection-start-line="404" selection-start-column="39" selection-end-line="404" selection-end-column="39" />
         </state>
       </provider>
     </entry>
