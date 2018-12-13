@@ -95,3 +95,27 @@
   </p-table>
   <br><br>
 </div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">Beers Sold Timings</h2>
+  <p class="text-center">Time Distribution of When Beers Sold the Most</p>
+  <p-table [value]="beersold">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>TransID</th>
+        <th>TransDate</th>
+        <th>TransDay</th>
+        <th>Time</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-beersold>
+      <tr>
+        <td>{{ beersold.transID }}</td>
+        <td>{{ beersold.transdate }}</td>
+        <td>{{ beersold.transday }}</td>
+        <td>{{ beersold.transtime }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br><br>
+</div>

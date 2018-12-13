@@ -37,4 +37,33 @@
     <br><br>
   </div>
 
+<div class="container">
+  <br>
+  <div id="drinkergraph"></div>
+</div>
+
+<div class="container">
+    <h2 class="text-center font-weight-light">{{drinkerName}}'s Spendings</h2>
+    <p class="text-center">List of BarNames and $$ Spent on Each Bar</p>
+    <p-table [value]="drinkerSpendings">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Bar Name</th>
+          <th>Total $</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-spends>
+        <tr>
+          <td>
+            <a routerLink="/bars/{{spends.barname}}">
+                {{spends.barname}}
+            </a>
+          </td>
+          <td>{{ spends.spendings | currency }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br><br>
+</div>
+
   

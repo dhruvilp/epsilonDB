@@ -12,6 +12,7 @@ export class ManufacturerDetailsComponent implements OnInit {
   manfName: string;
   topregion: any[];
   topregiondrinker: any[];
+  toptotalsold: any[];
 
   constructor(private manufactureService: ManufacturersService,
     private route: ActivatedRoute) {
@@ -33,6 +34,15 @@ export class ManufacturerDetailsComponent implements OnInit {
 
           }
         );
+
+        this.manufactureService.get_total_sold(this.manfName).subscribe(
+          data => {
+            this.toptotalsold = data;
+            console.log(this.topregiondrinker);
+
+          }
+        );
+
         });
   }
   ngOnInit() {

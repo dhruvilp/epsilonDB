@@ -289,6 +289,20 @@ def get_top10_dates(beer):
             return None
         return [dict(row) for row in rs]
 
+def get_time_beer_sold_most(beer):
+    with engine.connect() as con:
+        query = sql.text(
+            'select distinct (t.transID), t.transtime, t.transdate, t.transday, t.total from trans t where t.transID in '
+            '(Select transID from transdetails where itemname = :beer) '
+            'order by cast(t.transtime as time) ASC'
+        )
+
+        rs = con.execute(query, beer=beer)
+
+        if rs is None:
+            return None
+        return [dict(row) for row in rs]
+
 
 def get_top10_transactions(drinker_name):
     with engine.connect() as con:
@@ -305,15 +319,49 @@ def get_top10_transactions(drinker_name):
             return None
         return [dict(row) for row in rs]
 
+def get_drinker_spendings(drinker_name):
+    with engine.connect() as con:
+        query = sql.text(
+            'select b.barname , T1.spendings from '
+            '(select T.barID, sum(t.total) as spendings from '
+            '(select m.transID, m.barID from makes m where m.driverlicense IN '
+            '(select d.driverlicense from drinkers d where d.name= :drinker_name))T, trans t '
+            'where T.transID = t.transID and transdate>="2017-1-01" and transdate<="2018-1-01" '
+            'group by barID)T1, bar b where T1.barID=b.barID'
+        )
+
+        rs = con.execute(query, drinker_name=drinker_name)
+
+        if rs is None:
+            return None
+        return [dict(row) for row in rs]
+
+def get_beers_order_most(drinker_name):
+    with engine.connect() as con:
+        query = sql.text(
+            'select T.itemname, SUM(T.qty)as totalqty from '
+            '(select * from transdetails td where td.transID in '
+            '(select m.transID from makes m where m.driverlicense='
+            '( select d.driverlicense from drinkers d where d.name= :drinker_name)))T '
+            'where T.itemname in (SELECT itemname from menu where type="B") '
+            'GROUP BY T.itemname Order by SUM(T.qty) DESC'
+        )
+
+        rs = con.execute(query, drinker_name=drinker_name)
+
+        if rs is None:
+            return None
+        return [dict(row) for row in rs]
+
 
 def get_top_regions(manufacturer_name):
     with engine.connect() as con:
         query = sql.text(
-            'select b.city , b.state from bar b where b.barID= '
-            '(select  mk.barID from makes mk, '
+            'select b.city , b.state from bar b where b.barID = '
+            '(select mk.barID from makes mk, '
             '(select td.transID, td.itemname, td.qty from transdetails td where td.itemname in '
-            '(select m.itemname from menu m  where m.maker="Anheuser-Busch"))T where mk.transID=T.transID '
-            'group by barID order by sum(T.qty) desc limit 1)'
+            '(select m.itemname from menu m where m.maker = :manufacturer_name)) T '
+            'where mk.transID=T.transID group by barID order by sum(T.qty) desc limit 1)'
         )
 
         rs = con.execute(query, manufacturer_name=manufacturer_name)
@@ -325,15 +373,27 @@ def get_top_regions(manufacturer_name):
 
 def get_drinker_region(manufacturer_name):
     with engine.connect() as con:
-        query = sql.text('select t2.City, t2.State, cast(count(t2.Name) as unsigned) as liked \
-            from (select t1.Name, t1.BeerName, d.City, d.State \
-            from (select l.Name, l.BeerName from Beers b, likes l where b.Manufacturer = :manufacturer_name \
-            and b.Name= l.BeerName)t1, Drinkers d \
-            where t1.Name=d.Name)t2 \
-            group by t2.City,t2.State \
-            order by liked desc \
-            limit 10; \
-            ')
+        query = sql.text(
+            'select b.city , b.state from bar b where b.barID= '
+            '(select mk.barID from makes mk, '
+            '(select td.transID, td.itemname, td.qty from transdetails td where td.itemname in '
+            '(select m.itemname from menu m where m.maker= :manufacturer_name))T '
+            'where mk.transID=T.transID group by barID order by sum(T.qty) desc limit 1)'
+        )
+
+        rs = con.execute(query, manufacturer_name=manufacturer_name)
+
+        if rs is None:
+            return None
+        return [dict(row) for row in rs]
+
+def get_total_sold(manufacturer_name):
+    with engine.connect() as con:
+        query = sql.text(
+            'select td.itemname, sum(td.qty) as totalsold from transdetails td where td.itemname in '
+            '(select m.itemname from menu m where m.maker= :manufacturer_name) '
+            'group by td.itemname'
+        )
 
         rs = con.execute(query, manufacturer_name=manufacturer_name)
 

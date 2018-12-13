@@ -32,6 +32,9 @@ export class BeersService {
     return this.http.get<any[]>('/api/get_top10_dates/' + beer);
   }
 
+  get_time_beer_sold_most(beer: string) {
+    return this.http.get<any[]>('/api/get_time_beer_sold_most/' + beer);
+  }
 
   getBarsSelling(beer: String) {
     return this.http.get<BeerLocation[]>('/api/bars-selling/' + beer);

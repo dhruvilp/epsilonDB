@@ -185,6 +185,17 @@ def get_top_beers_sold(beer):
     except Exception as e:
         return make_response(str(e), 500)
 
+@app.route("/api/get_time_beer_sold_most/<beer>", methods=["GET"])
+def get_time_beer_sold_most(beer):
+    try:
+        if beer is None:
+            raise ValueError("Beer is not specified.")
+        return jsonify(database.get_time_beer_sold_most(beer))
+    except ValueError as e:
+        return make_response(str(e), 400)
+    except Exception as e:
+        return make_response(str(e), 500)
+
 @app.route("/api/Top10Consumer/<beer>", methods=["GET"])
 def get_top_consumers(beer):
     try:
@@ -214,6 +225,28 @@ def get_top10_transactions(drinker_name):
         if drinker_name is None:
             raise ValueError("Drinker is not specified.")
         return jsonify(database.get_top10_transactions(drinker_name))
+    except ValueError as e:
+        return make_response(str(e), 400)
+    except Exception as e:
+        return make_response(str(e), 500)
+
+@app.route("/api/get_beers_order_most/<drinker_name>", methods=["GET"])
+def get_beers_order_most(drinker_name):
+    try:
+        if drinker_name is None:
+            raise ValueError("Drinker is not specified.")
+        return jsonify(database.get_beers_order_most(drinker_name))
+    except ValueError as e:
+        return make_response(str(e), 400)
+    except Exception as e:
+        return make_response(str(e), 500)
+
+@app.route("/api/get_drinker_spendings/<drinker_name>", methods=["GET"])
+def get_drinker_spendings(drinker_name):
+    try:
+        if drinker_name is None:
+            raise ValueError("Drinker is not specified.")
+        return jsonify(database.get_drinker_spendings(drinker_name))
     except ValueError as e:
         return make_response(str(e), 400)
     except Exception as e:
@@ -258,6 +291,17 @@ def get_top_regions(manufacturer_name):
         if manufacturer_name is None:
             raise ValueError("Manufacturer is not specified.")
         return jsonify(database.get_top_regions(manufacturer_name))
+    except ValueError as e:
+        return make_response(str(e), 400)
+    except Exception as e:
+        return make_response(str(e), 500)
+
+@app.route("/api/get_total_sold/<manufacturer_name>", methods=["GET"])
+def get_total_sold(manufacturer_name):
+    try:
+        if manufacturer_name is None:
+            raise ValueError("Manufacturer is not specified.")
+        return jsonify(database.get_total_sold(manufacturer_name))
     except ValueError as e:
         return make_response(str(e), 400)
     except Exception as e:

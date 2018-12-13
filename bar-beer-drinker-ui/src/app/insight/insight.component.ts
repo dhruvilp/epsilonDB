@@ -26,6 +26,21 @@ export class InsightComponent implements OnInit {
         this.renderCharts(barname, frequentCount);
       }
     );
+
+    this.barService.getFrequentCounts().subscribe(
+      data => {
+        console.log(data);
+
+        const barname = [];
+        const frequentCount = [];
+
+        data.forEach(bar => {
+          barname.push(bar.barname);
+          frequentCount.push(bar.frequentCount);
+        });
+        this.renderCharts(barname, frequentCount);
+      }
+    );
   }
 
   ngOnInit() {

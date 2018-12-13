@@ -17,9 +17,9 @@
           </tr>
         </ng-template>
   
-        <ng-template pTemplate="body" let-column_name>
+        <ng-template pTemplate="body" let-colname>
           <tr>
-            <td>{{ column_name.column_name }}</td>
+            <td>{{ colname.column_name }}</td>
             <td>
   
               <div class="form-group row">
@@ -33,10 +33,21 @@
         </ng-template>
       </p-table>
       <br><br>
-      <p class="text-center">
-        <button type='submit' class='btn btn-primary'>Submit</button>
-      </p>
+
+      <div class="container text-center">
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="alert alert-success alert-dismissible">
+                <a  class="close" data-dismiss="modal" aria-label="close">&times;</a>
+                <strong>Success!</strong> Indicates a successful insert into DB!
+              </div>
+            </div>
+          </div>
+      </div>
+
     </form>
     <br><br>
   </div>
+
 

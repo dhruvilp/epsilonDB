@@ -3,6 +3,8 @@ import { BeersService, BeerLocation } from '../beers.service';
 import { ActivatedRoute } from '@angular/router';
 import {SelectItem} from 'primeng/components/common/selectitem'
 
+declare const Highcharts: any;
+
 @Component({
   selector: 'app-beer-details',
   templateUrl: './beer-details.component.html',
@@ -13,6 +15,7 @@ export class BeerDetailsComponent implements OnInit {
   bars: any[];
   consumers: any[];
   dates: any[];
+  beersold: any[];
 
   beerName: string;
   beerLocations: BeerLocation[];
@@ -62,10 +65,18 @@ export class BeerDetailsComponent implements OnInit {
         }
       );
 
+      this.beerService.get_time_beer_sold_most(this.beerName).subscribe(
+        data => {
+          this.beersold = data;
+        }
+      );
+
+
     });
   }
 
   ngOnInit() {
   }
+
 
 }
