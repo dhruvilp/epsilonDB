@@ -6,3 +6,6 @@ Developers:
 * Dhruvil Patel
 * Parth Bhatt
 * Kshitij bafna
+
+Check it out @
+https://infinite-depths-41305.herokuapp.com/static/index.html
