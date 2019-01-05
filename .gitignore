@@ -1,5 +1,3 @@
-.idea/
-
 # Byte-compiled / optimized / DLL files
 config.py
 
@@ -11,6 +9,10 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.idea/
+server/BarBeerDrinker/config.py
+e2e/
+node_modules/
 .Python
 build/
 develop-eggs/
