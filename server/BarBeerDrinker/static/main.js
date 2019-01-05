@@ -187,7 +187,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n  <a class=\"navbar-brand\" href=\"#\">Epsilon Project</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/bars\">Bars </a>\n      </li>\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/beers\">Beers</a>\n      </li>\n\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/drinkers\">Drinkers</a>\n      </li>\n\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/bartenders\">Bartenders</a>\n      </li>\n\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/manufacturers\">Manufacturers</a>\n      </li>\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/modifications\">Modifications</a>\n      </li>\n      \n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/insight\">Insight</a>\n      </li>\n  \n    </ul>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark\" style=\"background-color: #076eb9;\">\n  <a class=\"navbar-brand\" href=\"#\">\n    Epsilon Project</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/bars\">Bars </a>\n      </li>\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/beers\">Beers</a>\n      </li>\n\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/drinkers\">Drinkers</a>\n      </li>\n\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/bartenders\">Bartenders</a>\n      </li>\n\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/manufacturers\">Manufacturers</a>\n      </li>\n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/modifications\">Modifications</a>\n      </li>\n      \n      <li class=\"nav-item\" routerLinkActive=\"active\">\n        <a class=\"nav-link\" routerLink=\"/insight\">Insight</a>\n      </li>\n  \n    </ul>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -351,7 +351,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{barName}}</h1>\n    <p class=\"bar-details\" *ngIf=\"barDetails\">\n      {{barDetails?.address}}<span *ngIf=\"barDetails.address&&barDetails.city\">,</span>\n      {{barDetails?.city}}, {{barDetails?.state}}, {{barDetails?.zipcode}}\n    </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Menu</h2>\n  <br>\n  <p-table [value]=\"menu\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Item Name</th>\n        <th>Type (Beer/Food)</th>\n        <th>Manufacturer</th>\n        <th>Price</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-item>\n      <tr>\n        <td><a routerLink=\"/beers/{{ item.itemname }}\">{{ item.itemname }}</a></td>\n          <td>{{ item.type}}</td>\n          <td>{{ item.maker}}</td>\n          <td>{{ item.weekendprice | currency }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n</div>\n<br><br>\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph\"></div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph2\"></div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph3\"></div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Drinkers</h2>\n  <p class=\"text-center\">Who spends the most</p>\n  <p-table [value]=\"drinkers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Drinker</th>\n        <th>Amount Spend ($)</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-bar>\n      <tr>\n        <td>{{ bar[0] }}</td>\n        <td>{{ bar[1] | currency}}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Beers</h2>\n  <p class=\"text-center\">Which are most popular</p>\n  <p-table [value]=\"beers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Beer</th>\n        <th>Number of beers sold</th>\n        <th>Day</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-bar>\n      <tr>\n        <td>{{ bar.beers.monday.iname }}</td>\n        <td>{{ bar.beers.iqty }}</td>\n        <td>{{ bar.day }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{barName}}</h1>\n    <p class=\"bar-details\" *ngIf=\"barDetails\">\n      {{barDetails?.address}}<span *ngIf=\"barDetails.address&&barDetails.city\">,</span>\n      {{barDetails?.city}}, {{barDetails?.state}}, {{barDetails?.zipcode}}\n    </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Menu</h2>\n  <br>\n  <p-table [value]=\"menu\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Item Name</th>\n        <th>Type (Beer/Food)</th>\n        <th>Manufacturer</th>\n        <th>Price</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-item>\n      <tr>\n        <td><a routerLink=\"/beers/{{ item.itemname }}\">{{ item.itemname }}</a></td>\n          <td>{{ item.type}}</td>\n          <td>{{ item.maker}}</td>\n          <td>{{ item.weekendprice | currency }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n</div>\n<br><br>\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph\"></div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph2\"></div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph3\"></div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Drinkers</h2>\n  <p class=\"text-center\">Who spends the most</p>\n  <p-table [value]=\"drinkers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Drinker</th>\n        <th>Amount Spend ($)</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-bar>\n      <tr>\n        <td>{{ bar[0] }}</td>\n        <td>{{ bar[1] | currency}}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Beers</h2>\n  <p class=\"text-center\">Which are most popular on Tuesday</p>\n  <p-table [value]=\"beers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Beer</th>\n        <th>Number of beers sold</th>\n        <!--<th>Day</th>-->\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-bar>\n      <tr>\n        <td>{{ bar[0] }}</td>\n        <td>{{ bar[1] }}</td>\n        <!--<td>{{ bar.day }}</td>-->\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
 
 /***/ }),
 
@@ -689,7 +689,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Bar Page</h1>\n    <p class=\"lead\">Explore different Bars in the USA</p>\n  </div>\n</div>\n\n<div class=\"container\">\n\n    <p-table [value]=\"bars\">\n      <ng-template pTemplate=\"header\">\n          <tr>\n            <th>Bar Name</th>\n            <th>Bar ID</th>\n            <th>Address</th>\n            <th>City</th>\n            <th>State</th>\n            <th>Zipcode</th>\n          </tr>\n      </ng-template>\n      <ng-template pTemplate=\"body\" let-bar>\n          <tr>\n            <td>\n              <a routerLink=\"/bars/{{bar.barname}}\">\n                {{bar.barname}}\n              </a>\n            </td> \n            <td>{{ bar.barID }}</td>\n            <td>{{ bar.address }}</td>\n            <td>{{ bar.city }}</td>\n            <td>{{bar.state}}</td>\n            <td>{{ bar.zipcode }}</td>\n          </tr>\n      </ng-template>\n    </p-table>\n    \n\n  </div>\n  \n  <br><br>\n"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\" style=\"background-color: #bad6f3;\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Bar Page</h1>\n    <p class=\"lead\">Explore different Bars in the USA</p>\n  </div>\n</div>\n\n<div class=\"container\">\n\n    <p-table [value]=\"bars\">\n      <ng-template pTemplate=\"header\">\n          <tr>\n            <th>Bar Name</th>\n            <th>Bar ID</th>\n            <th>Address</th>\n            <th>City</th>\n            <th>State</th>\n            <th>Zipcode</th>\n          </tr>\n      </ng-template>\n      <ng-template pTemplate=\"body\" let-bar>\n          <tr>\n            <td>\n              <a routerLink=\"/bars/{{bar.barname}}\">\n                {{bar.barname}}\n              </a>\n            </td> \n            <td>{{ bar.barID }}</td>\n            <td>{{ bar.address }}</td>\n            <td>{{ bar.city }}</td>\n            <td>{{bar.state}}</td>\n            <td>{{ bar.zipcode }}</td>\n          </tr>\n      </ng-template>\n    </p-table>\n    \n\n  </div>\n  \n  <br><br>\n"
 
 /***/ }),
 
@@ -894,7 +894,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <h1 class=\"display-4\">Bartenders Page</h1>\n      <p class=\"lead\">Explore Bartenders</p>\n    </div>\n  </div>\n  \n  <div class=\"container\">\n    <h2 class=\"text-center font-weight-light\">Details of Bartenders and BarName where they work</h2>\n    <p-table [value]=\"bartender\">\n      <ng-template pTemplate=\"header\">\n        <tr> \n          <th class=\"text-center\">Bartender Name</th>\n          <th class=\"text-center\">Bar Name</th>\n\n        </tr>\n      </ng-template>\n      <ng-template pTemplate=\"body\" let-bart>\n        <tr>\n          <td class=\"text-center\"><a routerLink=\"/bartenders/{{ bart.name }}\">{{ bart.name }}</a></td>\n          <td class=\"text-center\">{{ bart.barname }}</td>\n        </tr>\n      </ng-template>\n    </p-table>\n    <br><br>\n  </div>"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\" style=\"background-color: #bad6f3;\">\n    <div class=\"container\">\n      <h1 class=\"display-4\">Bartenders Page</h1>\n      <p class=\"lead\">Explore Bartenders</p>\n    </div>\n  </div>\n  \n  <div class=\"container\">\n    <h2 class=\"text-center font-weight-light\">Details of Bartenders and BarName where they work</h2>\n    <p-table [value]=\"bartender\">\n      <ng-template pTemplate=\"header\">\n        <tr> \n          <th class=\"text-center\">Bartender Name</th>\n          <th class=\"text-center\">Bar Name</th>\n\n        </tr>\n      </ng-template>\n      <ng-template pTemplate=\"body\" let-bart>\n        <tr>\n          <td class=\"text-center\"><a routerLink=\"/bartenders/{{ bart.name }}\">{{ bart.name }}</a></td>\n          <td class=\"text-center\">{{ bart.barname }}</td>\n        </tr>\n      </ng-template>\n    </p-table>\n    <br><br>\n  </div>"
 
 /***/ }),
 
@@ -965,7 +965,7 @@ module.exports = ".result-count{\n    font-size: 1.25rem;\n}\n/*# sourceMappingU
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{beerName}}</h1>\n    <p class=\"beer-details\" *ngIf=\"manufacturer\">\n      Made by <i>{{manufacturer}}</i>\n    </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <div>\n      <h2 class=\"text-center font-weight-light\">Basic Info</h2>\n      <p class=\"text-center\">About [ {{beerName}} Beer ]</p>\n    <span class=\"font-weight-light result-count\"> Sold at {{beerLocations?.length}} bars in the USA</span>\n    <br>\n    <br>\n    <p-table [value]=\"beerLocations\" sortMode=\"multiple\" sortField=\"weekendprice\">\n      <ng-template pTemplate=\"header\">\n        <tr>\n          <th>Bar</th>\n          <th>Price</th>\n        </tr>\n      </ng-template>\n\n      <ng-template pTemplate=\"body\" let-bar>\n        <tr>\n          <td><a routerLink=\"/bars/{{ bar.Bar }}\">{{ bar.barname }}</a></td>\n          <td>{{ bar.weekendprice | currency }}</td>\n        </tr>\n      </ng-template>\n    </p-table>\n    <br> <br>\n\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Bars</h2>\n  <p class=\"text-center\">Where this beer Sells the Most.</p>\n  <p-table [value]=\"bars\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Bar</th>\n        <th>Number of Beers Sold</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td>{{ beer.barname }}</td>\n        <td>{{ beer.numBeersSold }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Consumers</h2>\n  <p class=\"text-center\">Who are biggest buyers of this Beer.</p>\n  <p-table [value]=\"consumers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Name</th>\n        <th>Number of Beers Bought</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td>{{ beer.transID }}</td>\n        <td>{{ beer.biggestConsumers }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Dates</h2>\n  <p class=\"text-center\">When Beer Solds the Most.</p>\n  <p-table [value]=\"dates\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Dates [yyyy-mm-dd]</th>\n        <th>Number of Beers Bought</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td>{{ beer.transdate }}</td>\n        <td>{{ beer.mostselling }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{beerName}}</h1>\n    <p class=\"beer-details\" *ngIf=\"manufacturer\">\n      Made by <i>{{manufacturer}}</i>\n    </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <div>\n      <h2 class=\"text-center font-weight-light\">Basic Info</h2>\n      <p class=\"text-center\">About [ {{beerName}} Beer ]</p>\n    <span class=\"font-weight-light result-count\"> Sold at {{beerLocations?.length}} bars in the USA</span>\n    <br>\n    <br>\n    <p-table [value]=\"beerLocations\" sortMode=\"multiple\" sortField=\"weekendprice\">\n      <ng-template pTemplate=\"header\">\n        <tr>\n          <th>Bar</th>\n          <th>Price</th>\n        </tr>\n      </ng-template>\n\n      <ng-template pTemplate=\"body\" let-bar>\n        <tr>\n          <td><a routerLink=\"/bars/{{ bar.Bar }}\">{{ bar.barname }}</a></td>\n          <td>{{ bar.weekendprice | currency }}</td>\n        </tr>\n      </ng-template>\n    </p-table>\n    <br> <br>\n\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Bars</h2>\n  <p class=\"text-center\">Where this beer Sells the Most.</p>\n  <p-table [value]=\"bars\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Bar</th>\n        <th>Number of Beers Sold</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td>{{ beer.barname }}</td>\n        <td>{{ beer.numBeersSold }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Consumers</h2>\n  <p class=\"text-center\">Who are biggest buyers of this Beer.</p>\n  <p-table [value]=\"consumers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Name</th>\n        <th>Number of Beers Bought</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td>{{ beer.transID }}</td>\n        <td>{{ beer.biggestConsumers }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Top 10 Dates</h2>\n  <p class=\"text-center\">When Beer Solds the Most.</p>\n  <p-table [value]=\"dates\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Dates [yyyy-mm-dd]</th>\n        <th>Number of Beers Bought</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td>{{ beer.transdate }}</td>\n        <td>{{ beer.mostselling }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Beers Sold Timings</h2>\n  <p class=\"text-center\">Time Distribution of When Beers Sold the Most</p>\n  <p-table [value]=\"beersold\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>TransID</th>\n        <th>TransDate</th>\n        <th>TransDay</th>\n        <th>Time</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beersold>\n      <tr>\n        <td>{{ beersold.transID }}</td>\n        <td>{{ beersold.transdate }}</td>\n        <td>{{ beersold.transday }}</td>\n        <td>{{ beersold.transtime }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
 
 /***/ }),
 
@@ -1018,6 +1018,9 @@ var BeerDetailsComponent = /** @class */ (function () {
             });
             _this.beerService.getBeerManufacturers(_this.beerName).subscribe(function (data) {
                 _this.manufacturer = data;
+            });
+            _this.beerService.get_time_beer_sold_most(_this.beerName).subscribe(function (data) {
+                _this.beersold = data;
             });
         });
     }
@@ -1078,6 +1081,9 @@ var BeersService = /** @class */ (function () {
     BeersService.prototype.getTop10Dates = function (beer) {
         return this.http.get('/api/get_top10_dates/' + beer);
     };
+    BeersService.prototype.get_time_beer_sold_most = function (beer) {
+        return this.http.get('/api/get_time_beer_sold_most/' + beer);
+    };
     BeersService.prototype.getBarsSelling = function (beer) {
         return this.http.get('/api/bars-selling/' + beer);
     };
@@ -1118,7 +1124,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">USA's most popular BEERS can be found here!</h1>\n    <p class=\"lead\">List of Beers with Manufacturers</p>\n\n    <p-dropdown *ngIf=\"manufacturerOptions\" [ngClass]=\"{ 'no-option-selected': selectedManufacturer === undefined || selectedManufacturer === null }\"\n      placeholder=\"Filter by manufacturer\" [options]=\"manufacturerOptions\" [(ngModel)]=\"selectedManufacturer\" showClear=\"true\"\n      (onChange)=\"filterBeers($event.value)\"></p-dropdown>\n\n  </div>\n</div>\n<br>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Beers</h2>\n  <p-table [value]=\"beers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Name</th>\n        <th>Manufacturer</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td><a routerLink=\"/beers/{{ beer.itemname }}\">{{ beer.itemname }}</a></td>\n        <td>{{ beer.maker }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\" style=\"background-color: #bad6f3;\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">USA's most popular BEERS can be found here!</h1>\n    <p class=\"lead\">List of Beers with Manufacturers</p>\n\n    <p-dropdown *ngIf=\"manufacturerOptions\" [ngClass]=\"{ 'no-option-selected': selectedManufacturer === undefined || selectedManufacturer === null }\"\n      placeholder=\"Filter by manufacturer\" [options]=\"manufacturerOptions\" [(ngModel)]=\"selectedManufacturer\" showClear=\"true\"\n      (onChange)=\"filterBeers($event.value)\"></p-dropdown>\n\n  </div>\n</div>\n<br>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Beers</h2>\n  <p-table [value]=\"beers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Name</th>\n        <th>Manufacturer</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-beer>\n      <tr>\n        <td><a routerLink=\"/beers/{{ beer.itemname }}\">{{ beer.itemname }}</a></td>\n        <td>{{ beer.maker }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
 
 /***/ }),
 
@@ -1205,7 +1211,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{drinkerName}}</h1>\n    <p class=\"drinker-details\" *ngIf=\"drinkerDetails\">\n      {{drinkerDetails?.address}} <span *ngIf=\"drinkerDetails.Address && drinkerDetails.City\">|</span>\n      {{drinkerDetails?.city}} | {{drinkerDetails?.state}} <br> Contact# : {{drinkerDetails?.phone}}\n    </p>\n  </div>\n</div>\n\n<div class=\"container\">\n    <h2 class=\"text-center font-weight-light\">Transactions</h2>\n    <p class=\"text-center\">Top 10 Transaction Details</p>\n    <p-table [value]=\"drinkerTransactions\">\n      <ng-template pTemplate=\"header\">\n        <tr>\n          <th>TransID</th>\n          <th>TransDate</th>\n          <th>TransDay</th>\n          <th>TransTime</th>\n          <th>Total</th>\n          <th>BarName</th>\n        </tr>\n      </ng-template>\n      <ng-template pTemplate=\"body\" let-beer>\n        <tr>\n          <td>{{ beer.transID }}</td>\n          <td>{{ beer.transdate }}</td>\n          <td>{{ beer.transday }}</td>\n          <td>{{ beer.transtime }}</td>\n          <td>{{ beer.total | currency }}</td>\n          <td>{{ beer.barname }}</td>\n        </tr>\n      </ng-template>\n    </p-table>\n    <br><br>\n  </div>\n\n  "
+module.exports = "\n<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{drinkerName}}</h1>\n    <p class=\"drinker-details\" *ngIf=\"drinkerDetails\">\n      {{drinkerDetails?.address}} <span *ngIf=\"drinkerDetails.Address && drinkerDetails.City\">|</span>\n      {{drinkerDetails?.city}} | {{drinkerDetails?.state}} <br> Contact# : {{drinkerDetails?.phone}}\n    </p>\n  </div>\n</div>\n\n<div class=\"container\">\n    <h2 class=\"text-center font-weight-light\">Transactions</h2>\n    <p class=\"text-center\">Top 10 Transaction Details</p>\n    <p-table [value]=\"drinkerTransactions\">\n      <ng-template pTemplate=\"header\">\n        <tr>\n          <th>TransID</th>\n          <th>TransDate</th>\n          <th>TransDay</th>\n          <th>TransTime</th>\n          <th>Total</th>\n          <th>BarName</th>\n        </tr>\n      </ng-template>\n      <ng-template pTemplate=\"body\" let-beer>\n        <tr>\n          <td>{{ beer.transID }}</td>\n          <td>{{ beer.transdate }}</td>\n          <td>{{ beer.transday }}</td>\n          <td>{{ beer.transtime }}</td>\n          <td>{{ beer.total | currency }}</td>\n          <td>{{ beer.barname }}</td>\n        </tr>\n      </ng-template>\n    </p-table>\n    <br><br>\n  </div>\n\n<div class=\"container\">\n  <br>\n  <div id=\"drinkergraph\"></div>\n</div>\n\n<div class=\"container\">\n    <h2 class=\"text-center font-weight-light\">{{drinkerName}}'s Spendings</h2>\n    <p class=\"text-center\">List of BarNames and $$ Spent on Each Bar</p>\n    <p-table [value]=\"drinkerSpendings\">\n      <ng-template pTemplate=\"header\">\n        <tr>\n          <th>Bar Name</th>\n          <th>Total $</th>\n        </tr>\n      </ng-template>\n      <ng-template pTemplate=\"body\" let-spends>\n        <tr>\n          <td>\n            <a routerLink=\"/bars/{{spends.barname}}\">\n                {{spends.barname}}\n            </a>\n          </td>\n          <td>{{ spends.spendings | currency }}</td>\n        </tr>\n      </ng-template>\n    </p-table>\n    <br><br>\n</div>\n\n  "
 
 /***/ }),
 
@@ -1247,9 +1253,71 @@ var DrinkerDetailsComponent = /** @class */ (function () {
             _this.drinkerService.getDrinkerTransaction(_this.drinkerName).subscribe(function (data) {
                 _this.drinkerTransactions = data;
             });
+            _this.drinkerService.get_beers_order_most(_this.drinkerName).subscribe(function (data) {
+                console.log(data);
+                var itemname = [];
+                var totalqty = [];
+                data.forEach(function (drinker) {
+                    itemname.push(drinker.itemname);
+                    totalqty.push(drinker.totalqty);
+                });
+                _this.renderCharts(itemname, totalqty);
+            });
+            _this.drinkerService.get_drinker_spendings(_this.drinkerName).subscribe(function (data) {
+                _this.drinkerSpendings = data;
+            });
         });
     }
     DrinkerDetailsComponent.prototype.ngOnInit = function () {
+    };
+    DrinkerDetailsComponent.prototype.renderCharts = function (itemname, totalqty) {
+        Highcharts.chart('drinkergraph', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Beers S/He Orders the Most'
+            },
+            xAxis: {
+                categories: itemname,
+                title: {
+                    style: {
+                        color: 'green',
+                        fontSize: '20'
+                    },
+                    text: 'Beer Names'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    style: {
+                        color: 'green',
+                        fontSize: '20'
+                    },
+                    text: 'Total Qty'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            plotOptions: {
+                drinker: {
+                    datalabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                    data: totalqty
+                }]
+        });
     };
     DrinkerDetailsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1303,6 +1371,12 @@ var DrinkersService = /** @class */ (function () {
     DrinkersService.prototype.getDrinkerTransaction = function (drinker) {
         return this.http.get('/api/get_top10_transactions/' + drinker);
     };
+    DrinkersService.prototype.get_beers_order_most = function (drinker) {
+        return this.http.get('/api/get_beers_order_most/' + drinker);
+    };
+    DrinkersService.prototype.get_drinker_spendings = function (drinker) {
+        return this.http.get('/api/get_drinker_spendings/' + drinker);
+    };
     DrinkersService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -1334,7 +1408,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Drinker Page</h1>\n    <p class=\"lead\">Explore Drinker</p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Drinker</h2>\n  <p-table [value]=\"drinkers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Name</th>\n        <th>Driver License</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Phone</th>\n        <th>Gender</th>\n        <th>Age</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-drinker>\n      <tr>\n        <td><a routerLink=\"/drinkers/{{ drinker.name }}\">{{ drinker.name }}</a></td>\n        <td>{{ drinker.driverlicense }}</td>\n        <td>{{ drinker.address }}</td>\n        <td>{{ drinker.city }}</td>\n        <td>{{ drinker.state }}</td>\n        <td>{{ drinker.phone }}</td>\n        <td>{{ drinker.gender }}</td>\n        <td>{{ drinker.age }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph\">\n    \n  </div>\n</div>"
+module.exports = "\n<div class=\"jumbotron jumbotron-fluid\" style=\"background-color: #bad6f3;\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Drinker Page</h1>\n    <p class=\"lead\">Explore Drinker</p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Drinker</h2>\n  <p-table [value]=\"drinkers\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th>Name</th>\n        <th>Driver License</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Phone</th>\n        <th>Gender</th>\n        <th>Age</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-drinker>\n      <tr>\n        <td><a routerLink=\"/drinkers/{{ drinker.name }}\">{{ drinker.name }}</a></td>\n        <td>{{ drinker.driverlicense }}</td>\n        <td>{{ drinker.address }}</td>\n        <td>{{ drinker.city }}</td>\n        <td>{{ drinker.state }}</td>\n        <td>{{ drinker.phone }}</td>\n        <td>{{ drinker.gender }}</td>\n        <td>{{ drinker.age }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n\n<div class=\"container\">\n  <br>\n  <div id=\"bargraph\">\n    \n  </div>\n</div>"
 
 /***/ }),
 
@@ -1404,7 +1478,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <br>\n  <div id=\"bargraph\">\n    \n  </div>\n</div>"
+module.exports = "<div class=\"container\">\n  <br>\n  <div id=\"bargraph\"></div>\n\n  <br>\n  <div id=\"bargraph2\"></div>\n\n\n</div>"
 
 /***/ }),
 
@@ -1435,6 +1509,16 @@ var InsightComponent = /** @class */ (function () {
     function InsightComponent(barService) {
         var _this = this;
         this.barService = barService;
+        this.barService.getFrequentCounts().subscribe(function (data) {
+            console.log(data);
+            var barname = [];
+            var frequentCount = [];
+            data.forEach(function (bar) {
+                barname.push(bar.barname);
+                frequentCount.push(bar.frequentCount);
+            });
+            _this.renderCharts(barname, frequentCount);
+        });
         this.barService.getFrequentCounts().subscribe(function (data) {
             console.log(data);
             var barname = [];
@@ -1522,7 +1606,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{ manfName }}</h1>\n    <p class=\"lead\">Explore Manufacturers</p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Regions where their sales are high</h2>\n  <p-table [value]=\"topregiondrinker\">\n    <ng-template pTemplate=\"header\">\n      <tr> \n        <th class=\"text-center\">City</th>\n        <th class=\"text-center\">State</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-manf>\n      <tr>\n        <td class=\"text-center\">{{ topregion.city }}</td>\n        <td class=\"text-center\">{{ topregion.state }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Regions where their beers are liked the most</h2>\n  <p-table [value]=\"topregion\">\n    <ng-template pTemplate=\"header\">\n      <tr> \n        <th class=\"text-center\">City</th>\n        <th class=\"text-center\">State</th>\n        <th class=\"text-center\">beerssold</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-manf>\n      <tr>\n        <td class=\"text-center\">{{ manf.City }}</td>\n        <td class=\"text-center\">{{ manf.State }}</td>\n        <td class=\"text-center\">{{ manf.sales }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">{{ manfName }}</h1>\n    <p class=\"lead\">Manufacturers Stats</p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">Number of Beers with QTY Sold</h2>\n  <p-table [value]=\"toptotalsold\">\n    <ng-template pTemplate=\"header\">\n      <tr>\n        <th class=\"text-center\">Beer Name</th>\n        <th class=\"text-center\">Total Qty</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-manf>\n      <tr>\n        <td class=\"text-center\">{{ manf.itemname }}</td>\n        <td class=\"text-center\">{{ manf.totalsold }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">A Region Where Sales Were HIGHEST Last Week</h2>\n  <p-table [value]=\"topregion\">\n    <ng-template pTemplate=\"header\">\n      <tr> \n        <th class=\"text-center\">City</th>\n        <th class=\"text-center\">State</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-manf>\n      <tr>\n        <td class=\"text-center\">{{ manf.city }}</td>\n        <td class=\"text-center\">{{ manf.state }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">A Region Where Their Beers are Liked the Most</h2>\n  <p-table [value]=\"topregiondrinker\">\n    <ng-template pTemplate=\"header\">\n      <tr> \n        <th class=\"text-center\">City</th>\n        <th class=\"text-center\">State</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-manf>\n      <tr>\n        <td class=\"text-center\">{{ manf.city }}</td>\n        <td class=\"text-center\">{{ manf.state }}</td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
 
 /***/ }),
 
@@ -1565,6 +1649,10 @@ var ManufacturerDetailsComponent = /** @class */ (function () {
             });
             _this.manufactureService.get_drinker_Regions(_this.manfName).subscribe(function (data) {
                 _this.topregiondrinker = data;
+                console.log(_this.topregiondrinker);
+            });
+            _this.manufactureService.get_total_sold(_this.manfName).subscribe(function (data) {
+                _this.toptotalsold = data;
                 console.log(_this.topregiondrinker);
             });
         });
@@ -1618,10 +1706,13 @@ var ManufacturersService = /** @class */ (function () {
         return this.http.get('/api/manufacturers');
     };
     ManufacturersService.prototype.get_Top_Regions = function (manf) {
-        return this.http.get('api/get_top_regions/' + manf);
+        return this.http.get("api/get_top_regions/" + manf);
     };
     ManufacturersService.prototype.get_drinker_Regions = function (manf) {
-        return this.http.get('api/get_drinker_regions/' + manf);
+        return this.http.get("api/get_drinker_regions/" + manf);
+    };
+    ManufacturersService.prototype.get_total_sold = function (manf) {
+        return this.http.get("api/get_total_sold/" + manf);
     };
     ManufacturersService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -1654,7 +1745,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Manufacturers Page</h1>\n    <p class=\"lead\">Explore Beer Manufacturers</p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">DETAILS OF BEER MANUFACTURERS IN THE USA</h2>\n  <p-table [value]=\"manf\">\n    <ng-template pTemplate=\"header\">\n      <tr> \n        <th class=\"text-center\">Manufacturer</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-manufacturer>\n      <tr>\n        <td class=\"text-center\"><a routerLink=\"/manufacturers/{{ manufacturer.maker }}\">{{ manufacturer.maker }}</a></td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\" style=\"background-color: #bad6f3;\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Manufacturers Page</h1>\n    <p class=\"lead\">Explore Beer Manufacturers</p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <h2 class=\"text-center font-weight-light\">DETAILS OF BEER MANUFACTURERS IN THE USA</h2>\n  <p-table [value]=\"manf\">\n    <ng-template pTemplate=\"header\">\n      <tr> \n        <th class=\"text-center\">Manufacturer</th>\n      </tr>\n    </ng-template>\n    <ng-template pTemplate=\"body\" let-manufacturer>\n      <tr>\n        <td class=\"text-center\"><a routerLink=\"/manufacturers/{{ manufacturer.maker }}\">{{ manufacturer.maker }}</a></td>\n      </tr>\n    </ng-template>\n  </p-table>\n  <br><br>\n</div>"
 
 /***/ }),
 
@@ -1724,7 +1815,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <h1 class=\"display-4\">{{tableName}} Table</h1>\n      \n      \n    </div>\n  </div>\n\n  <div class=\"container form-group\" >\n    <h2 class=\"text-center font-weight-light\">Modification Page</h2>\n    <form method=\"get\">\n      <p-table [value]=\"column_name\">\n        <ng-template pTemplate=\"header\">\n          <tr>\n            <th>Column Name</th>\n            <th>Value</th>\n          </tr>\n        </ng-template>\n  \n        <ng-template pTemplate=\"body\" let-column_name>\n          <tr>\n            <td>{{ column_name.column_name }}</td>\n            <td>\n  \n              <div class=\"form-group row\">\n                <div class=\"col-sm-10\">\n                  <input type=\"text\" class=\"form-control\" id=\"inputtext\">\n                </div>\n              </div>\n  \n            </td>\n          </tr>\n        </ng-template>\n      </p-table>\n      <br><br>\n      <p class=\"text-center\">\n        <button type='submit' class='btn btn-primary'>Submit</button>\n      </p>\n    </form>\n    <br><br>\n  </div>\n\n"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n    <div class=\"container\">\n      <h1 class=\"display-4\">{{tableName}} Table</h1>\n      \n      \n    </div>\n  </div>\n\n  <div class=\"container form-group\" >\n    <h2 class=\"text-center font-weight-light\">Modification Page</h2>\n    <form method=\"get\">\n      <p-table [value]=\"column_name\">\n        <ng-template pTemplate=\"header\">\n          <tr>\n            <th>Column Name</th>\n            <th>Value</th>\n          </tr>\n        </ng-template>\n  \n        <ng-template pTemplate=\"body\" let-colname>\n          <tr>\n            <td>{{ colname.column_name }}</td>\n            <td>\n  \n              <div class=\"form-group row\">\n                <div class=\"col-sm-10\">\n                  <input type=\"text\" class=\"form-control\" id=\"inputtext\">\n                </div>\n              </div>\n  \n            </td>\n          </tr>\n        </ng-template>\n      </p-table>\n      <br><br>\n\n      <div class=\"container text-center\">\n          <button type=\"button\" class=\"btn btn-info btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">Submit</button>\n          <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\n            <div class=\"modal-dialog\">\n              <div class=\"alert alert-success alert-dismissible\">\n                <a  class=\"close\" data-dismiss=\"modal\" aria-label=\"close\">&times;</a>\n                <strong>Success!</strong> Indicates a successful insert into DB!\n              </div>\n            </div>\n          </div>\n      </div>\n\n    </form>\n    <br><br>\n  </div>\n\n\n"
 
 /***/ }),
 
@@ -1845,7 +1936,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Modifications</h1>\n    <p class=\"lead\">Select tables to modify data.</p>\n  </div>\n</div>\n\n<div class=\"container\">\n\n  <h2 class=\"text-center font-weight-light\">Tables Info (Relational Schema)</h2>\n  <table class=\"table\">\n    <thead class=\"thead-light\">\n      <tr>\n        <th scope=\"col\">#</th>\n        <th scope=\"col\">Table Name</th>\n        <th scope=\"col\">Schema</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <th scope=\"row\">1</th>\n        <td><a routerLink=\"/modifications/bars\">Bar</a></td>\n        <td>[ BarID, BarName, Address, City, State, Zipcode, MonHours, TueHours, WedHours, ThurHours, FriHours, SatHours, SunHours]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">2</th>\n        <td><a routerLink=\"/modifications/bartenders\">Bartenders</a></td>\n        <td>[ SSN, Name, Address, City, State, Zipcode, Gender, Phone, Age, Email ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">3</th>\n        <td><a routerLink=\"/modifications/drinkers\">Drinkers</a></td>\n        <td>[ Driverlicense, Name, Address, City, State, Zipcode, Phone, Gender, Age ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">4</th>\n        <td><a routerLink=\"/modifications/frequents\">Frequents</a></td>\n        <td>[ BarID, Driverlicense, Distance ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">5</th>\n        <td><a routerLink=\"/modifications/handles\">Handles</a></td>\n        <td>[ TransID, SSN ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">6</th>\n        <td><a routerLink=\"/modifications/likes\">Likes</a></td>\n        <td>[ Driverlicense, ItemName]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">7</th>\n        <td><a routerLink=\"/modifications/makes\">Makes</a></td>\n        <td>[ TransID, BarID, Driverlicense ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">8</th>\n        <td><a routerLink=\"/modifications/menu\">Menu</a></td>\n        <td>[ ItemName, Type, Maker]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">9</th>\n        <td><a routerLink=\"/modifications/sells\">Sells</a></td>\n        <td>[ BarID, ItemName, Weekdayprice, Weekendprice, Inventory]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">10</th>\n        <td><a routerLink=\"/modifications/trans\">Trans</a></td>\n        <td>[ TransID, TransDate, TransDay, TransTime, SubTotal, Tax, Tip, Total ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">11</th>\n        <td><a routerLink=\"/modifications/transdetails\">TransDetails</a></td>\n        <td>[ TransID, Itemname, Qty ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">12</th>\n        <td><a routerLink=\"/modifications/work\">Work</a></td>\n        <td>[ BarID, SSN, City, State, Zipcode, EmployeeID, Mon, Tue, Wed, Thur, Fri, Sat, Sun ]</td>\n      </tr>\n    \n  </tbody>\n</table>\n</div>\n\n\n"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\" style=\"background-color: #bad6f3;\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Modifications</h1>\n    <p class=\"lead\">Select tables to modify data.</p>\n  </div>\n</div>\n\n<div class=\"container\">\n\n  <h2 class=\"text-center font-weight-light\">Tables Info (Relational Schema)</h2>\n  <table class=\"table\">\n    <thead class=\"thead-light\">\n      <tr>\n        <th scope=\"col\">#</th>\n        <th scope=\"col\">Table Name</th>\n        <th scope=\"col\">Schema</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <th scope=\"row\">1</th>\n        <td><a routerLink=\"/modifications/bar\">Bar</a></td>\n        <td>[ BarID, BarName, Address, City, State, Zipcode, MonHours, TueHours, WedHours, ThurHours, FriHours, SatHours, SunHours]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">2</th>\n        <td><a routerLink=\"/modifications/bartenders\">Bartenders</a></td>\n        <td>[ SSN, Name, Address, City, State, Zipcode, Gender, Phone, Age, Email ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">3</th>\n        <td><a routerLink=\"/modifications/drinkers\">Drinkers</a></td>\n        <td>[ Driverlicense, Name, Address, City, State, Zipcode, Phone, Gender, Age ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">4</th>\n        <td><a routerLink=\"/modifications/frequents\">Frequents</a></td>\n        <td>[ BarID, Driverlicense, Distance ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">5</th>\n        <td><a routerLink=\"/modifications/handles\">Handles</a></td>\n        <td>[ TransID, SSN ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">6</th>\n        <td><a routerLink=\"/modifications/likes\">Likes</a></td>\n        <td>[ Driverlicense, ItemName]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">7</th>\n        <td><a routerLink=\"/modifications/makes\">Makes</a></td>\n        <td>[ TransID, BarID, Driverlicense ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">8</th>\n        <td><a routerLink=\"/modifications/menu\">Menu</a></td>\n        <td>[ ItemName, Type, Maker]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">9</th>\n        <td><a routerLink=\"/modifications/sells\">Sells</a></td>\n        <td>[ BarID, ItemName, Weekdayprice, Weekendprice, Inventory]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">10</th>\n        <td><a routerLink=\"/modifications/trans\">Trans</a></td>\n        <td>[ TransID, TransDate, TransDay, TransTime, SubTotal, Tax, Tip, Total ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">11</th>\n        <td><a routerLink=\"/modifications/transdetails\">TransDetails</a></td>\n        <td>[ TransID, Itemname, Qty ]</td>\n      </tr>\n      <tr>\n        <th scope=\"row\">12</th>\n        <td><a routerLink=\"/modifications/work\">Work</a></td>\n        <td>[ BarID, SSN, City, State, Zipcode, EmployeeID, Mon, Tue, Wed, Thur, Fri, Sat, Sun ]</td>\n      </tr>\n    \n  </tbody>\n</table>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1908,7 +1999,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbotron-fluid\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Welcome to Epsilon Inc. -- A Bar, Beer, Drinker Database</h1>\n    <p class=\"lead\">Group #144</p>\n  </div>\n</div>\n"
+module.exports = "<div class=\"jumbotron jumbotron-fluid\" style=\"background-color: #bad6f3;\">\n  <div class=\"container\">\n    <h1 class=\"display-4\">Welcome to Epsilon Inc. -- A Bar, Beer, Drinker Database</h1>\n    <p class=\"lead\">Group #144</p>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 

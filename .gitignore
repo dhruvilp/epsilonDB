@@ -1,5 +1,7 @@
+.idea/
+
 # Byte-compiled / optimized / DLL files
-server/BarBeerDrinker/config.py
+config.py
 
 __pycache__/
 *.py[cod]
